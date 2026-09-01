@@ -25,6 +25,7 @@
         border: 2px solid #3f404a; 
         border-radius: 8px;
         outline: none;
+        resize: none;
     }
     button {
         background-color: #72d0d5e9; 
@@ -49,29 +50,31 @@
 <body>
     <br>
    
-   <div style="place-items: center; min-height: 100vh; background-color: #1e1e24;" class="outer">
+   <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background-color: #1e1e24;" class="outer">
     
     <h1 style="color: blanchedalmond; margin-bottom: 0; letter-spacing: 0.1em;">MONKEYTYPE</h1>
     <h4 style="color: rgba(245, 245, 220, 0.861); margin-top: 5px; font-weight: normal; letter-spacing: 0.05em;">Simulation</h4>
     <br><br>
-    <div style="display: grid; width: 130vh; height: auto; padding: 25px; background-color: #2a2b36; border-radius: 8px; box-sizing: border-box;" class="inner">
-        <div style="width: 100%; box-shadow: none;" oncopy="return false;" class="view">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ut eum natus, eaque ad, repellendus maxime quis dolore delectus facere, quibusdam animi iure. Impedit, accusantium deserunt. Earum excepturi odio aliquid sint ducimus eos quo, inventore nostrum, in nulla quaerat officia natus expedita recusandae ut laudantium, aspernatur sit quas iste! Nulla?
-       </div>
-    </div>
-<br>
-     <div>
-<form method="POST" action="/submit">
-        <textarea style="padding: 3vh; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3)" name="user_input" placeholder="Type your text . . ."></textarea>
-</div>
-    <br>
-     <div style="place-items: center;">
-    <button class="click" type="submit">Submit</button>
+    
+    <form method="POST" action="/submit" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <div style="display: grid; width: 130vh; max-width: 90%; height: auto; padding: 25px; background-color: #2a2b36; border-radius: 8px; box-sizing: border-box;" class="inner">
+            <div style="width: 100%; box-shadow: none;" oncopy="return false;" class="view">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ut eum natus, eaque ad, repellendus maxime quis dolore delectus facere, quibusdam animi iure. Impedit, accusantium deserunt. Earum excepturi odio aliquid sint ducimus eos quo, inventore nostrum, in nulla quaerat officia natus expedita recusandae ut laudantium, aspernatur sit quas iste! Nulla?
+           </div>
+        </div>
+        <br>
+        <div>
+            <textarea style="padding: 3vh; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3)" name="user_input" placeholder="Type your text . . ."></textarea>
+        </div>
+        <br>
+        <div style="display: flex; justify-content: center;">
+            <button class="click" type="submit">Submit</button>
+        </div>
+    </form>
    </div>
-   </form>
-   </div>
+   
    {%if show_top_layer%}
-     <div class="top_layer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color:rgba(36, 44, 68, 0.467); display: flex; justify-content: center; align-items: center; z-index: 10; transition: all 0.4s ease;">
+     <div class="top_layer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color:rgba(36, 44, 68, 0.467); display: flex; justify-content: center; align-items: center; z-index: 10; transition: all 0.4s ease;">
     <form method="POST">
     <button style="background-color: #72d0d5e9; 
         color: #1e1e24; 
