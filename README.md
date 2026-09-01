@@ -30,7 +30,7 @@ venv\Scripts\activate.bat
 On Windows (PowerShell):
 venv\Scripts\Activate.ps1
 #Add your secret key by creating '.env' file in root directory
-add the line FLASK_SECRET_KEY="your_custom_key_here"
+add the line FLASK_SECRET_KEY=your_custom_key_here
 Step 3: Install Dependencies
 Install your project requirements using pip:
 Bash
