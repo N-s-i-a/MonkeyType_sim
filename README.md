@@ -41,4 +41,4 @@ Bash
 python3 aug.py
 Step 5: Open in Browser
 Open your web browser and navigate to:
-http://127.0.0.1:5000/
+ http://127.0.0.1:8080
