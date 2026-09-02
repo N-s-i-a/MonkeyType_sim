@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 app = Flask(__name__)
-secret_key = os.getenv("FLASK_SECRET_KEY")
+secret_key = os.environ.get("FLASK_SECRET_KEY")
 if not secret_key:
     raise ValueError("CRITICAL ERROR: FLASK_SECRET_KEY is not set in the environment or .env file!")
 app.secret_key=secret_key
