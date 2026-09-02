@@ -30,5 +30,7 @@ def submit():
     wpm=base.words//(diff/60)
     accuracy=base.q
     return render_template("secondpage.html",Page=wpm,Newpg=accuracy)
-if __name__=="__main__":
-    app.run(debug=True,port=8080)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
