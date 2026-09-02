@@ -16,22 +16,24 @@
     textarea {
         background-color: #2a2b36; 
         color: #e2e4e9; 
-        width: 60vh;
-        height: 35vh;
+        width: 100%;
+        max-width: 600px;
+        height: 200px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         font-family: 'Courier New', Courier, monospace;
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         letter-spacing: 0.05em;
         border: 2px solid #3f404a; 
         border-radius: 8px;
         outline: none;
         resize: none;
+        box-sizing: border-box;
     }
     button {
         background-color: #72d0d5e9; 
         color: #1e1e24; 
-        width: 12vh;
-        height: 5vh;
+        width: 120px;
+        height: 45px;
         border: none;
         border-radius: 4px;
         font-family: inherit;
@@ -40,7 +42,7 @@
         font-size: 1rem;
     }
     .view {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         background-color: #2a2b36; 
         color: #74767e; 
         line-height: 1.6;
@@ -50,21 +52,21 @@
 <body>
     <br>
    
-   <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background-color: #1e1e24;" class="outer">
+   <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: calc(100vh - 100px); background-color: #1e1e24; padding: 20px; box-sizing: border-box;" class="outer">
     
-    <h1 style="color: blanchedalmond; margin-bottom: 0; letter-spacing: 0.1em;">MONKEYTYPE</h1>
-    <h4 style="color: rgba(245, 245, 220, 0.861); margin-top: 5px; font-weight: normal; letter-spacing: 0.05em;">Simulation</h4>
+    <h1 style="color: blanchedalmond; margin-bottom: 0; letter-spacing: 0.1em; text-align: center;">MONKEYTYPE</h1>
+    <h4 style="color: rgba(245, 245, 220, 0.861); margin-top: 5px; font-weight: normal; letter-spacing: 0.05em; text-align: center;">Simulation</h4>
     <br><br>
     
     <form method="POST" action="/submit" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-        <div style="display: grid; width: 130vh; max-width: 90%; height: auto; padding: 25px; background-color: #2a2b36; border-radius: 8px; box-sizing: border-box;" class="inner">
+        <div style="display: grid; width: 100%; max-width: 800px; height: auto; padding: 25px; background-color: #2a2b36; border-radius: 8px; box-sizing: border-box;" class="inner">
             <div style="width: 100%; box-shadow: none;" oncopy="return false;" class="view">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ut eum natus, eaque ad, repellendus maxime quis dolore delectus facere, quibusdam animi iure. Impedit, accusantium deserunt. Earum excepturi odio aliquid sint ducimus eos quo, inventore nostrum, in nulla quaerat officia natus expedita recusandae ut laudantium, aspernatur sit quas iste! Nulla?
            </div>
         </div>
         <br>
-        <div>
-            <textarea style="padding: 3vh; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3)" name="user_input" placeholder="Type your text . . ."></textarea>
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <textarea style="padding: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3)" name="user_input" placeholder="Type your text . . ."></textarea>
         </div>
         <br>
         <div style="display: flex; justify-content: center;">
@@ -73,13 +75,20 @@
     </form>
    </div>
    
+   <!-- Clean, Un-cringe Credit Footer -->
+   <footer style="text-align: center; padding: 25px; background-color: #1e1e24; clear: both;">
+       <p style="color: #4a4b54; font-family: 'Courier New', Courier, monospace; font-size: 13px; letter-spacing: 0.5px; margin: 0;">
+           © Nishita Bormudoi (nousseason)
+       </p>
+   </footer>
+   
    {%if show_top_layer%}
      <div class="top_layer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color:rgba(36, 44, 68, 0.467); display: flex; justify-content: center; align-items: center; z-index: 10; transition: all 0.4s ease;">
     <form method="POST">
     <button style="background-color: #72d0d5e9; 
         color: #1e1e24; 
-        width: 12vh;
-        height: 5vh;
+        width: 120px;
+        height: 45px;
         border: none;
         border-radius: 4px;
         font-family: inherit;
@@ -89,9 +98,7 @@
       START
     </button>
     </form>
-
   </div>
   {%endif%}
 </body>
 </html>
-
